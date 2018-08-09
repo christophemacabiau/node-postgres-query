@@ -1,0 +1,12 @@
+{
+  "name": "query",
+  "version": "1.1.0",
+  "description": "node-postgres query",
+  "author": "christophe macabiau",
+  "main": "query.js",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "pg": "git+https://github.com/cricri/node-postgres.git#cancel",
+    "uuid": "^3.1.0"
+  }
+}
