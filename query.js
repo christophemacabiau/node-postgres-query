@@ -39,7 +39,10 @@ const buildQuery = function(dbConfig, sql, cancelable) {
 
       let databasePool = pool[dbConfig.database];
       if (!databasePool)
-        databasePool = pool[dbConfig.database] = new pg.Pool(Object.assign({}, dbConfig));
+        databasePool = pool[dbConfig.database] = new pg.Pool(Object.assign({
+          idleTimeoutMillis: 5000, // close idle clients after 5 seconds
+          connectionTimeoutMillis: 1000, // return an error after 1 second if connection could not be established
+        }, dbConfig));
 
       databasePool.connect((err, client, release) => {
         if (err)
