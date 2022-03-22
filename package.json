@@ -6,7 +6,7 @@
   "main": "query.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "pg": "git+https://github.com/cricri/node-postgres.git",
+    "pg": "github:christophemacabiau/node-postgres",
     "uuid": "^3.3.2"
   }
 }
